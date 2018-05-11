@@ -10,13 +10,13 @@ main:
 loop:
         addi    $t0, $t0, 1	
         add     $t1, $t1, $s0	
-        blt	    $t1, $s2, loop
+        blt     $t1, $s2, loop
       
-        la	    $a0, str	
-        li	    $v0, 4	
+        li      $a0, str	
+        li      $v0, 4	
         syscall
       
-        bne	    $t1, $s2, L1
+        bne	$t1, $s2, L1
         move    $a0, $t0
         b       print
 L1:     
@@ -27,5 +27,5 @@ print:
         move    $v0, 1
         syscall
         
-        li	    $v0, 10
+        li      $v0, 10
         syscall
